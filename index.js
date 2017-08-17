@@ -45,7 +45,7 @@ class FBClient {
      */
     wordFilter(string, badWords) {
         // Regular expression for all bad words, non-case sensitive
-        let regex = new RegExp(badWords.join('|'), 'gi');
+        let regex = new RegExp('\\b(' + badWords.join('|') + ')\\b', 'gi');
         return string.replace(regex, function (match) {
             // Replace each letter with a star
             let stars = '';
